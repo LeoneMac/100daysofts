@@ -41,7 +41,6 @@ class CharCounter extends TextAreaHandler {
         else { spanTextCounter.classList.remove("visible"); }
     }
 }
-
 class TextAreaLimit extends TextAreaHandler {
     protected setupEventListener(): void {
         this.textarea.addEventListener("input", this.limitLines.bind(this));
@@ -53,5 +52,19 @@ class TextAreaLimit extends TextAreaHandler {
             this.textarea.value = lines.slice(0, 8).join("\n");
     }
 }
+class ShadowBox extends TextAreaHandler {
+    protected setupEventListener(): void {
+        this.textarea.addEventListener("focus", this.addShadow.bind(this));
+        this.textarea.addEventListener("focusout", this.removeShadow.bind(this));
+    }
+    private addShadow(): void {
+        this.textarea.classList.add("shadow");
+    }
+    private removeShadow(): void {
+        this.textarea.classList.remove("shadow");
+    }
+}
+
 const charCounter: CharCounter = new CharCounter("txtArea");
 const textAreaLimit: TextAreaLimit = new TextAreaLimit("txtArea");
+const shadowBox: ShadowBox = new ShadowBox("txtArea");

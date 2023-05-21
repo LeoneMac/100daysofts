@@ -48,5 +48,18 @@ class TextAreaLimit extends TextAreaHandler {
             this.textarea.value = lines.slice(0, 8).join("\n");
     }
 }
+class ShadowBox extends TextAreaHandler {
+    setupEventListener() {
+        this.textarea.addEventListener("focus", this.addShadow.bind(this));
+        this.textarea.addEventListener("focusout", this.removeShadow.bind(this));
+    }
+    addShadow() {
+        this.textarea.classList.add("shadow");
+    }
+    removeShadow() {
+        this.textarea.classList.remove("shadow");
+    }
+}
 const charCounter = new CharCounter("txtArea");
 const textAreaLimit = new TextAreaLimit("txtArea");
+const shadowBox = new ShadowBox("txtArea");

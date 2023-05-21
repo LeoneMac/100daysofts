@@ -43,7 +43,6 @@ textarea {
     border-radius: 5px;
     resize: none;
     height: 150px;
-    box-shadow: -1px 1px 36px -1px rgba(0,0,0,0.75);
     overflow: hidden;
     padding: 8px;
 }
@@ -59,4 +58,8 @@ textarea {
 
 #txtCounter.visible {
     opacity: 1;
+}
+
+#txtArea.shadow {
+    box-shadow: -1px 1px 36px -1px rgba(0,0,0,0.75);
 }
