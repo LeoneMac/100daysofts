@@ -54,4 +54,4 @@ class TextAreaLimit extends TextAreaHandler {
     }
 }
 const charCounter: CharCounter = new CharCounter("txtArea");
-const textAreaLimit: TextAreaLimit = new TextAreaLimit("txtAea");
+const textAreaLimit: TextAreaLimit = new TextAreaLimit("txtArea");
